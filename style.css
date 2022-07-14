@@ -1,0 +1,940 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgb(8, 71, 166);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #034652;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  font-family: "Noto Sans", sans-serif;
+  background-color: #f8fbfe;
+}
+
+body .menu {
+  display: none;
+}
+
+body button:hover {
+  cursor: pointer;
+}
+
+body nav {
+  background: var(--primary-color);
+  padding: 60px 0 20px 20px;
+  overflow: auto;
+}
+
+body nav .important.active {
+  background-color: #f8fbfe;
+}
+
+body nav .important.active svg {
+  fill: var(--primary-color);
+}
+
+body nav .important.active span {
+  color: var(--primary-color);
+}
+
+body nav .important.active::before, body nav .important.active::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 2;
+  border-radius: 6px;
+  -webkit-box-shadow: 6px 5px 3px #f8fbfe;
+          box-shadow: 6px 5px 3px #f8fbfe;
+}
+
+body nav .important.active::before {
+  position: absolute;
+  top: 100%;
+  -webkit-box-shadow: 4px -5px 3px #f8fbfe;
+          box-shadow: 4px -5px 3px #f8fbfe;
+  background-color: var(--primary-color);
+}
+
+body nav .today.active {
+  background-color: #f8fbfe;
+}
+
+body nav .today.active svg {
+  fill: var(--primary-color);
+}
+
+body nav .today.active span {
+  color: var(--primary-color);
+}
+
+body nav .today.active::before, body nav .today.active::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 2;
+  border-radius: 6px;
+  -webkit-box-shadow: 6px 5px 3px #f8fbfe;
+          box-shadow: 6px 5px 3px #f8fbfe;
+}
+
+body nav .today.active::before {
+  position: absolute;
+  top: 100%;
+  -webkit-box-shadow: 4px -5px 3px #f8fbfe;
+          box-shadow: 4px -5px 3px #f8fbfe;
+  background-color: var(--primary-color);
+}
+
+body nav .calendar.active {
+  background-color: #f8fbfe;
+}
+
+body nav .calendar.active svg {
+  fill: var(--primary-color);
+}
+
+body nav .calendar.active span {
+  color: var(--primary-color);
+}
+
+body nav .calendar.active::before, body nav .calendar.active::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 2;
+  border-radius: 6px;
+  -webkit-box-shadow: 6px 5px 3px #f8fbfe;
+          box-shadow: 6px 5px 3px #f8fbfe;
+}
+
+body nav .calendar.active::before {
+  position: absolute;
+  top: 100%;
+  -webkit-box-shadow: 4px -5px 3px #f8fbfe;
+          box-shadow: 4px -5px 3px #f8fbfe;
+  background-color: var(--primary-color);
+}
+
+body nav .navBar {
+  background-color: var(--primary-color);
+  padding: 16px 20px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  margin-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+body nav .navBar:hover {
+  background-color: #f8fbfe;
+}
+
+body nav .navBar:hover svg {
+  fill: var(--primary-color);
+}
+
+body nav .navBar:hover span {
+  color: var(--primary-color);
+}
+
+body nav .navBar:hover::before, body nav .navBar:hover::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 2;
+  border-radius: 6px;
+  -webkit-box-shadow: 6px 5px 3px #f8fbfe;
+          box-shadow: 6px 5px 3px #f8fbfe;
+}
+
+body nav .navBar:hover::before {
+  position: absolute;
+  top: 100%;
+  -webkit-box-shadow: 4px -5px 3px #f8fbfe;
+          box-shadow: 4px -5px 3px #f8fbfe;
+  background-color: var(--primary-color);
+}
+
+body nav .navBar svg {
+  margin-right: 8px;
+  fill: #fff;
+}
+
+body nav .navBar span {
+  font-weight: 600;
+  color: #fff;
+}
+
+body nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body nav ul li {
+  padding: 20px;
+  border-radius: 6px 0 0 6px;
+  font-weight: 600;
+  color: #fff;
+}
+
+body nav ul li.active {
+  background: #f8fbfe;
+  color: var(--primary-color);
+  position: relative;
+}
+
+body nav ul li.active::after, body nav ul li.active::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-bottom-right-radius: 6px;
+  -webkit-box-shadow: 6px 6px 2px #fff;
+          box-shadow: 6px 6px 2px #fff;
+}
+
+body nav ul li.active::after {
+  top: 100%;
+  border-top-right-radius: 6px;
+  -webkit-box-shadow: 6px -6px 2px #fff;
+          box-shadow: 6px -6px 2px #fff;
+}
+
+body nav .listInp {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding-right: 15px;
+}
+
+body nav .listInp input {
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  -webkit-transition: 1s;
+  transition: 1s;
+  color: #fff;
+  font-size: 14px;
+}
+
+body nav .listInp input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+body nav .listInp input:-ms-input-placeholder {
+  color: #fff;
+}
+
+body nav .listInp input::-ms-input-placeholder {
+  color: #fff;
+}
+
+body nav .listInp input::placeholder {
+  color: #fff;
+}
+
+body nav .listInp input:focus {
+  outline: none;
+}
+
+body nav .listInp input:focus::-webkit-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+body nav .listInp input:focus:-ms-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  transform: scale(0.6);
+}
+
+body nav .listInp input:focus::-ms-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  transform: scale(0.6);
+}
+
+body nav .listInp input:focus::placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+body nav .listInp button {
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
+  margin-left: 5px;
+  padding: 0 15px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+body nav .listInp button:hover {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+body .deleteSubTask {
+  cursor: pointer;
+}
+
+body .deleteSubTask svg:hover {
+  fill: red;
+}
+
+body section {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body section header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  padding: 20px 40px;
+}
+
+body section header .listSet {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body section header .listSet .deleteList svg:hover {
+  fill: rgba(224, 12, 12, 0.685);
+  cursor: pointer;
+}
+
+body section header h1 {
+  color: #034652;
+}
+
+body section header h3 {
+  text-align: center;
+  margin: 26px 0;
+  color: #034652;
+}
+
+body section header h3 span {
+  font-size: 22px;
+  color: var(--primary-color);
+  padding-right: 6px;
+}
+
+body section header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+body section header > div input {
+  width: 40%;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: rgba(177, 175, 175, 0.212);
+  position: relative;
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-size: 14px;
+  color: #0847a6;
+}
+
+body section header > div input::-webkit-input-placeholder {
+  color: #0847a6;
+}
+
+body section header > div input:-ms-input-placeholder {
+  color: #0847a6;
+}
+
+body section header > div input::-ms-input-placeholder {
+  color: #0847a6;
+}
+
+body section header > div input::placeholder {
+  color: #0847a6;
+}
+
+body section header > div input:focus {
+  outline: none;
+}
+
+body section header > div input:focus::-webkit-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+body section header > div input:focus:-ms-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.6);
+}
+
+body section header > div input:focus::-ms-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.6);
+}
+
+body section header > div input:focus::placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+body section header > div button {
+  background-color: #0847a6;
+  border: none;
+  border-radius: 6px;
+  margin-left: 5px;
+  padding: 0 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+body section header > div button:hover {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+body section header h1 {
+  font-size: 2rem;
+}
+
+body section #taskContainer {
+  height: 450px;
+  overflow-y: auto;
+}
+
+body section #taskContainer .task {
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 25px;
+  border: 1px solid #e3e3e3;
+}
+
+body section #taskContainer .task:hover {
+  background: rgba(64, 104, 224, 0.1);
+}
+
+body section #taskContainer .task h2 {
+  color: var(--primary-color);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body section #taskContainer .task h2:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+  cursor: pointer;
+}
+
+body section #taskContainer .task span {
+  color: #999;
+  font-weight: 300;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+body section #taskContainer .task h4 {
+  margin: 0 auto;
+  text-align: center;
+  color: #000;
+  font-size: 1.6em;
+}
+
+body section #taskContainer .task .taskIcon {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body section #taskContainer .task .taskIcon svg:hover {
+  cursor: pointer;
+}
+
+body section #taskViewContainer {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  position: relative;
+}
+
+body section #taskViewContainer .deleteTask {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  fill: var(--primary-color);
+}
+
+body section #taskViewContainer .deleteTask #deletePara {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 10px;
+  background-color: rgba(227, 227, 227, 0.3);
+  padding: 8px 10px;
+  display: none;
+}
+
+body section #taskViewContainer .deleteTask svg:hover {
+  fill: red;
+  cursor: pointer;
+}
+
+body section #taskViewContainer hr {
+  border-color: rgba(227, 227, 227, 0.3);
+}
+
+body section #taskViewContainer > button {
+  border: none;
+  color: var(--primary-color);
+  background-color: #fff;
+}
+
+body section #taskViewContainer .taskViewHead {
+  padding: 15px 0 0;
+}
+
+body section #taskViewContainer .taskViewHead h1 {
+  margin-bottom: 0;
+}
+
+body section #taskViewContainer .taskViewHead p {
+  margin-top: 0;
+  color: #888;
+  font-size: 12px;
+}
+
+body section #taskViewContainer .taskViewContent {
+  height: 270px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body section #taskViewContainer .taskViewContent .taskViewDate {
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 40px;
+  margin-top: 18px;
+  border: 1px solid var(--primary-color);
+  background-color: rgba(8, 71, 166, 0.1);
+  border-radius: 6px;
+}
+
+body section #taskViewContainer .taskViewContent .taskViewDate input {
+  border: none;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  padding: 12px 16px;
+  border-radius: 5px;
+}
+
+body section #taskViewContainer .taskViewContent .taskViewDate input:focus {
+  outline: none;
+}
+
+body section #taskViewContainer .taskViewContent .taskViewDate input:hover {
+  cursor: pointer;
+}
+
+body section #taskViewContainer .taskViewContent .taskViewDate label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+body section #taskViewContainer .taskViewContent .taskViewList ul {
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 0 20px;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: relative;
+  background-color: rgba(177, 175, 175, 0.212);
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin-right: 10px;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input::-webkit-input-placeholder {
+  color: #0847a6;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input:-ms-input-placeholder {
+  color: #0847a6;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input::-ms-input-placeholder {
+  color: #0847a6;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input::placeholder {
+  color: #0847a6;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input:focus {
+  outline: none;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input:focus::-webkit-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input:focus:-ms-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.6);
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input:focus::-ms-input-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.6);
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task input:focus::placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task button {
+  border: none;
+  padding: 8px 12px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 6px;
+}
+
+body section #taskViewContainer .taskViewContent .add_sub_task button:hover {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+body .task_sub_tasks {
+  list-style: none;
+  padding: 0;
+}
+
+body .task_sub_tasks div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .task_sub_tasks div svg {
+  fill: var(--primary-color);
+}
+
+body .task_sub_tasks div svg:hover {
+  fill: red;
+}
+
+body .task_sub_tasks div li {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 480px) {
+  body body {
+    width: 90vw;
+    overflow-x: hidden;
+    margin: 0;
+  }
+  body .menu {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  body .menu svg {
+    fill: green;
+  }
+  body nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+  }
+  body nav::before {
+    content: "";
+    width: calc(90vw - 100%);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: -1;
+  }
+  body nav.navBar {
+    padding-right: 0;
+  }
+  body nav.opened {
+    display: block;
+    width: 100%;
+  }
+  body section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    width: 90vw;
+  }
+  body section header {
+    padding: 10px;
+    margin-top: 35px;
+  }
+  body section header .listSet {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body section header h1 {
+    font-size: 1.6rem;
+  }
+  body section header h3 {
+    font-size: 1.02rem;
+  }
+  body section header .addTaskBtn {
+    width: 70%;
+  }
+  body section header .addTaskBtn input {
+    padding: 8px;
+    width: 70%;
+  }
+  body section header .addTaskBtn button {
+    font-size: 12px;
+    margin-left: 2px;
+    padding: 5px;
+  }
+  body section #taskContainer {
+    height: 72%;
+  }
+  body section #taskContainer .task {
+    padding: 5px 8px;
+    margin: 6px 10px;
+  }
+  body section #taskContainer .task h2 {
+    font-size: 1.3rem;
+  }
+  body section #taskContainer .task h4 {
+    font-size: 1rem;
+  }
+  body section #taskContainer .task .taskIcon {
+    width: 30%;
+  }
+  body section #taskContainer .task svg {
+    width: 20px;
+    height: 20px;
+  }
+  body section #taskViewContainer .deleteTask svg {
+    width: 20px;
+    height: 20px;
+  }
+  body section #taskViewContainer .taskViewHead h1 {
+    font-size: 1.2rem;
+  }
+  body section #taskViewContainer .taskViewHead p {
+    font-size: 10px;
+  }
+  body section #taskViewContainer .taskViewContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body section #taskViewContainer .taskViewContent .taskViewDate {
+    padding: 25px;
+  }
+  body section #taskViewContainer .taskViewContent .taskViewList h3 {
+    font-size: 16px;
+  }
+  body section #taskViewContainer .taskViewContent .taskViewList ul {
+    margin: 10px 0;
+  }
+  body section #taskViewContainer .taskViewContent .taskViewList ul .subTaskStyle li {
+    font-size: 12px;
+  }
+  body section #taskViewContainer .taskViewContent .taskViewList ul .deleteSUbTaskBtn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

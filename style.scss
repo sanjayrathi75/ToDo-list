@@ -1,0 +1,659 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgb(8, 71, 166);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  color: rgb(3, 70, 82);
+  align-items: stretch;
+  font-family: "Noto Sans", sans-serif;
+  background-color: rgb(248, 251, 254);
+  .menu {
+    display: none;
+  }
+  & button:hover {
+    cursor: pointer;
+  }
+  nav {
+    background: var(--primary-color);
+    padding: 60px 0 20px 20px;
+    overflow: auto;
+    .important {
+      &.active {
+        background-color: #f8fbfe;
+        & svg {
+          fill: var(--primary-color);
+        }
+        & span {
+          color: var(--primary-color);
+        }
+        &::before,
+        &::after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-color: var(--primary-color);
+          position: absolute;
+          bottom: 100%;
+          right: 0;
+          z-index: 2;
+          border-radius: 6px;
+          box-shadow: 6px 5px 3px #f8fbfe;
+        }
+        &::before {
+          position: absolute;
+          top: 100%;
+          box-shadow: 4px -5px 3px #f8fbfe;
+          background-color: var(--primary-color);
+        }
+      }
+    }
+    .today {
+      &.active {
+        background-color: #f8fbfe;
+        & svg {
+          fill: var(--primary-color);
+        }
+        & span {
+          color: var(--primary-color);
+        }
+        &::before,
+        &::after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-color: var(--primary-color);
+          position: absolute;
+          bottom: 100%;
+          right: 0;
+          z-index: 2;
+          border-radius: 6px;
+          box-shadow: 6px 5px 3px #f8fbfe;
+        }
+        &::before {
+          position: absolute;
+          top: 100%;
+          box-shadow: 4px -5px 3px #f8fbfe;
+          background-color: var(--primary-color);
+        }
+      }
+    }
+    .calendar {
+      &.active {
+        background-color: #f8fbfe;
+        & svg {
+          fill: var(--primary-color);
+        }
+        & span {
+          color: var(--primary-color);
+        }
+        &::before,
+        &::after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-color: var(--primary-color);
+          position: absolute;
+          bottom: 100%;
+          right: 0;
+          z-index: 2;
+          border-radius: 6px;
+          box-shadow: 6px 5px 3px #f8fbfe;
+        }
+        &::before {
+          position: absolute;
+          top: 100%;
+          box-shadow: 4px -5px 3px #f8fbfe;
+          background-color: var(--primary-color);
+        }
+      }
+    }
+    .navBar {
+      background-color: var(--primary-color);
+      padding: 16px 20px;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &:hover {
+        background-color: #f8fbfe;
+        & svg {
+          fill: var(--primary-color);
+        }
+        & span {
+          color: var(--primary-color);
+        }
+        &::before,
+        &::after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-color: var(--primary-color);
+          position: absolute;
+          bottom: 100%;
+          right: 0;
+          z-index: 2;
+          border-radius: 6px;
+          box-shadow: 6px 5px 3px #f8fbfe;
+        }
+        &::before {
+          position: absolute;
+          top: 100%;
+          box-shadow: 4px -5px 3px #f8fbfe;
+          background-color: var(--primary-color);
+        }
+      }
+      svg {
+        margin-right: 8px;
+        fill: #fff;
+      }
+      span {
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        padding: 20px;
+        border-radius: 6px 0 0 6px;
+        font-weight: 600;
+        color: #fff;
+        &.active {
+          background: rgb(248, 251, 254);
+          color: var(--primary-color);
+          position: relative;
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            // background-color: red;
+            border-bottom-right-radius: 6px;
+            box-shadow: 6px 6px 2px #fff;
+          }
+          &::after {
+            top: 100%;
+            border-top-right-radius: 6px;
+            box-shadow: 6px -6px 2px #fff;
+          }
+        }
+      }
+    }
+    .listInp {
+      margin-top: 20px;
+      display: flex;
+      align-items: stretch;
+      padding-right: 15px;
+      input {
+        border: none;
+        border-radius: 6px;
+        padding: 12px;
+        background-color: rgba(255, 255, 255, 0.2);
+        position: relative;
+        transition: 1s;
+        color: #fff;
+        font-size: 14px;
+        &::placeholder {
+          color: #fff;
+        }
+        &:focus {
+          outline: none;
+        }
+        &:focus::placeholder {
+          position: absolute;
+          top: 0;
+          left: 0;
+          color: #fff;
+          transform: scale(0.6);
+        }
+      }
+      button {
+        background-color: #fff;
+        border: none;
+        border-radius: 6px;
+        margin-left: 5px;
+        padding: 0 15px;
+        font-weight: 600;
+        color: var(--primary-color);
+        &:hover {
+          transform: scale(0.99);
+        }
+      }
+    }
+  }
+  .deleteSubTask {
+    cursor: pointer;
+    svg:hover {
+      fill: red;
+    }
+  }
+  section {
+    flex-grow: 1;
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      // background: rgba(65, 105, 225, 0.2);
+      padding: 20px 40px;
+      .listSet {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .deleteList {
+          svg:hover {
+            fill: rgba(224, 12, 12, 0.685);
+            cursor: pointer;
+          }
+        }
+      }
+      h1 {
+        color: rgb(3, 70, 82);
+      }
+      h3 {
+        text-align: center;
+        margin: 26px 0;
+        color: rgb(3, 70, 82);
+        span {
+          font-size: 22px;
+          color: var(--primary-color);
+          padding-right: 6px;
+        }
+      }
+      & > div {
+        display: flex;
+        align-items: stretch;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        input {
+          width: 40%;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 6px;
+          background-color: rgba(177, 175, 175, 0.212);
+          position: relative;
+          transition: 1s;
+          font-size: 14px;
+          color: rgb(8, 71, 166);
+          &::placeholder {
+            color: rgb(8, 71, 166);
+          }
+          &:focus {
+            outline: none;
+          }
+          &:focus::placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(0.6);
+          }
+        }
+        button {
+          background-color: rgb(8, 71, 166);
+          border: none;
+          border-radius: 6px;
+          margin-left: 5px;
+          padding: 0 15px;
+          font-weight: 600;
+          color: #fff;
+          &:hover {
+            transform: scale(0.99);
+          }
+        }
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    #taskContainer {
+      height: 450px;
+      overflow-y: auto;
+      .task {
+        margin: 20px;
+        background-color: #fff;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 25px;
+        border: 1px solid rgb(227, 227, 227);
+        &:hover {
+          background: rgba(64, 104, 224, 0.1);
+        }
+        h2 {
+          color: var(--primary-color);
+          transition: 0.3s;
+          &:hover {
+            transform: scale(1.08);
+            cursor: pointer;
+          }
+        }
+        span {
+          color: #999;
+          font-weight: 300;
+          font-size: 0.8em;
+          text-align: center;
+        }
+        h4 {
+          margin: 0 auto;
+          text-align: center;
+          color: #000;
+          font-size: 1.6em;
+        }
+        .taskIcon {
+          width: 20%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          & svg:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    #taskViewContainer {
+      display: none;
+      padding: 20px;
+      background-color: #fff;
+      position: relative;
+      .deleteTask {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        fill: var(--primary-color);
+        #deletePara {
+          margin: 0;
+          margin-top: 5px;
+          font-size: 10px;
+          background-color: rgba(227, 227, 227, 0.3);
+          padding: 8px 10px;
+          display: none;
+        }
+        svg:hover {
+          fill: red;
+          cursor: pointer;
+        }
+      }
+      hr {
+        border-color: rgba(227, 227, 227, 0.3);
+      }
+      & > button {
+        border: none;
+        color: var(--primary-color);
+        background-color: #fff;
+      }
+      .taskViewHead {
+        padding: 15px 0 0;
+        h1 {
+          margin-bottom: 0;
+        }
+        p {
+          margin-top: 0;
+          color: #888;
+          font-size: 12px;
+        }
+      }
+      .taskViewContent {
+        height: 270px;
+        display: flex;
+        justify-content: space-evenly;
+        .taskViewDate {
+          height: 70%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 30px 40px;
+          margin-top: 18px;
+          border: 1px solid var(--primary-color);
+          background-color: rgba(8, 71, 166, 0.1);
+          border-radius: 6px;
+          input {
+            border: none;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            padding: 12px 16px;
+            border-radius: 5px;
+            &:focus {
+              outline: none;
+            }
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          label {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+        .taskViewList {
+          ul {
+            max-height: 120px;
+            overflow-y: auto;
+            padding: 0 20px;
+          }
+        }
+        .add_sub_task {
+          display: flex;
+          align-items: stretch;
+          input {
+            border: none;
+            border-radius: 6px;
+            padding: 8px 12px;
+            position: relative;
+            background-color: rgba(177, 175, 175, 0.212);
+            transition: 1s;
+            margin-right: 10px;
+            &::placeholder {
+              color: rgb(8, 71, 166);
+            }
+            &:focus {
+              outline: none;
+            }
+            &:focus::placeholder {
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: scale(0.6);
+            }
+          }
+          button {
+            border: none;
+            padding: 8px 12px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 6px;
+            &:hover {
+              transform: scale(0.99);
+            }
+          }
+        }
+      }
+    }
+  }
+  .task_sub_tasks {
+    list-style: none;
+    padding: 0;
+    & div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & svg {
+        fill: var(--primary-color);
+        &:hover {
+          fill: red;
+        }
+      }
+      li {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    body {
+      width: 90vw;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    .menu {
+      display: block;
+      position: absolute;
+      z-index: 5;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      & svg {
+        fill: green;
+      }
+    }
+    nav {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      z-index: 2;
+      overflow: hidden;
+      &::before {
+        content: "";
+        width: calc(90vw - 100%);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        z-index: -1;
+      }
+      &.navBar {
+        padding-right: 0;
+      }
+      &.opened {
+        display: block;
+        width: 100%;
+      }
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      flex-grow: 0;
+      width: 90vw;
+      header {
+        padding: 10px;
+        margin-top: 35px;
+        .listSet {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        h3 {
+          font-size: 1.02rem;
+        }
+        .addTaskBtn {
+          width: 70%;
+          input {
+            padding: 8px;
+            width: 70%;
+          }
+          button {
+            font-size: 12px;
+            margin-left: 2px;
+            padding: 5px;
+          }
+        }
+      }
+      #taskContainer {
+        height: 72%;
+        .task {
+          padding: 5px 8px;
+          margin: 6px 10px;
+          h2 {
+            font-size: 1.3rem;
+          }
+          h4 {
+            font-size: 1rem;
+          }
+          .taskIcon {
+            width: 30%;
+          }
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      #taskViewContainer {
+        .deleteTask {
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .taskViewHead {
+          h1 {
+            font-size: 1.2rem;
+          }
+          p {
+            font-size: 10px;
+          }
+        }
+        .taskViewContent {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .taskViewDate {
+            padding: 25px;
+          }
+          .taskViewList {
+            h3 {
+              font-size: 16px;
+            }
+            ul {
+              margin: 10px 0;
+              .subTaskStyle {
+                li {
+                  font-size: 12px;
+                }
+              }
+              .deleteSUbTaskBtn {
+                svg {
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
